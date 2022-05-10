@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Bree Serif', serif;
+    box-sizing: border-box;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #F2E205, #F2C744);
+    padding: 20px;
+}
+
+.container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: 0 50px;
+}
+
+.titulo h2{
+    font-weight: 100;
+    font-size: 19px;
+}
+
+.pesquisa {
+    position: relative;
+    width: 210px;
+}
+
+.pesquisa input{
+    width: 100%;
+    padding: 5px 0px 5px 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.pesquisa i {
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    font-size: 17px;
+    background-color: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    background-color: #F2C744;
+    box-shadow: 0px 7px 7px rgb(0 0 0 / 32%);
+    margin-bottom: 30px;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li{
+    margin-right: 60px;
+}
+
+.navbar ul li a{
+    padding: 10px;
+    text-decoration: none;
+    color: #402319;
+}
+
+/* Botões */
+
+.botoes-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.botoes-container ul{
+    list-style: none;
+    display: flex;
+}
+
+
+.botoes-container ul li a{
+	padding: 14px 60px;
+	font-size: 18px;
+    box-shadow: 2px 2px 7px rgb(0 0 0 / 19%);
+    margin-right: 80px;
+    border: 1px solid #40231957;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    background-image: linear-gradient(to right, #D9A87E, #be946f);
+}
+
+/* Logo e Texto */
+
+.conteudo {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.conteudo .logo{
+    width: 20%;
+}
+
+.conteudo .logo img{
+    width: 280px;
+    position: absolute;
+    top: -20px;
+    left: 65px;
+}
+
+/* Texto */
+
+.texto {
+    width: 50%;
+    margin-right: 150px;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.texto h2{
+    margin-bottom: 10px;
+}
+
+/* Rodapé */
+.rodape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background-image: linear-gradient(to bottom, #F2E205, #F2C744);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -6px 7px rgba(0, 0, 0, 0.178);
+
+
+}
+
+.rodape img {
+    width: 80px;
+    margin-right: 15px;
+}
+
+.rodape p {
+    margin-right: 15px;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: black;
+}
