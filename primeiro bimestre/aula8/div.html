@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 50px;
+            width: 100px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div draggable="true" style=" background-color: blue;" class="oi" id="eu1">CARAMBA</div>
+    <div draggable="true" style=" background-color: red;" class="oi" id="eu2">Oi 2</div>
+    <div draggable="true" style=" background-color: yellow;"class="oi" id="eu3">Oi 3</div>
+    <div draggable="true" style=" background-color: green;"class="oi" id="eu4">Oi 4</div>
+
+    <div style="margin-top: 400px; background-color: black;" dropzone="copy" id="drop_zone" ondrop="dropHandler(event);"></div>
+
+    <script>
+        const dropzone = document.querySelector("#drop_zone");
+        const box = document.querySelectorAll(".oi");
+        dropzone.addEventListener('dragover', e => {
+            e.preventDefault();
+        });
+        box.forEach(boxEl => {
+                
+                boxEl.addEventListener('dragstart', e => {
+    
+                    e.dataTransfer.setData('Text', e.target.id);
+                    console.log(e.target.id);
+    
+                });
+    
+            });
+        function dropHandler(e) {
+            const id = e.dataTransfer.getData('Text');
+            const element = document.getElementById(id);
+            e.target.appendChild(element);
+        }
+    </script>
+</body>
+
+</html>
