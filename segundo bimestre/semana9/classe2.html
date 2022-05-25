@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="classe1" onclick="crescer()" ondblclick="diminuir()" id="div">Divisão 1</div>
+    <div class="classe2">Divisão 2</div>
+    <div class="classe3">Divisão 3</div>
+
+    <script>
+        const div1 = document.querySelector("#div");
+        
+        function diminuir(){
+            div1.style.height = "auto";
+        }
+        function crescer() {
+            div1.style.transition = "height 20s";
+            div1.style.height = "500px";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Seletores:
+
+p{color: white;}
+# id
+. class
+
+Tipos de CSS:
+
+Interno
+Externo
+Inline
+
