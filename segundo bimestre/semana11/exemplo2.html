@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-image:url()</title>
+    <style>
+        #exemplo1 {
+            background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/367520/capsule_616x353.jpg?t=1625363925);
+            /*
+            background-size: contain
+            background-attachment: fixed;
+            background-size: 300px 500px;
+            */
+            border: 1px solid black;
+            background-repeat: no-repeat;
+            padding: 15px;
+        }
+
+        #exemplo2 {
+            border: 1px solid black;
+            background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/367520/capsule_616x353.jpg?t=1625363925);
+            background-size: 100px 80px;
+            background-repeat: no-repeat;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="exemplo1">
+        <h1>Girassol</h1>
+        <p>Maio é o mês do Girassol</p>
+        <p>Em Maio encontramos os campos de girassóis floridos</p>
+    </div>
+
+    <p>Imagem reduzida:</p>
+    <div id="exemplo2">
+        <h1>Girassol</h1>
+        <p>Maio é o mês do Girassol</p>
+        <p>Em Maio encontramos os campos de girassóis floridos</p>
+    </div>
+</body>
+</html>

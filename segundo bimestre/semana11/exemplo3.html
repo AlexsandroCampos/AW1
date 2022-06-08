@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-image:url()</title>
+    <style>
+        .div1 {
+            background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/367520/capsule_616x353.jpg?t=1625363925);
+            height: 150px;
+            width: 180px;
+            border: 1px solid black;
+            background-repeat: no-repeat;
+            margin-bottom: 40px;
+        }
+
+        .div2 {
+            background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/367520/capsule_616x353.jpg?t=1625363925);
+            height: 150px;
+            width: 180px;
+            border: 1px solid black;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-bottom: 40px;
+        }
+
+        .div3 {
+            background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/367520/capsule_616x353.jpg?t=1625363925);
+            height: 150px;
+            width: 180px;
+            border: 1px solid black;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>Original</p>
+    <div class="div1"></div>
+    <p>Usando contain</p>
+    <div class="div2"></div>
+    <p>Usando cover</p>
+    <div class="div3"></div>
+
+</body>
+</html>

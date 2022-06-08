@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            width: 100%;
+            height: 100%;
+            background-image: url(https://png.pngtree.com/background/20210712/original/pngtree-modern-double-colors-neon-lights-on-brick-background-picture-image_1170045.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section{display: flex; align-items: center;}
+    
+        .btn{
+            width: 200px; 
+            height: 100px; 
+            margin-right: 80px; 
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #btn1{
+            background-color: #060273;
+
+        }
+        #btn1:hover{
+            box-shadow: 10px 9px 13px 4px black;
+        }
+        #btn2{
+            background-color: #1A14D9;
+            transition: background-color 1s;
+        }
+
+        #btn2:hover{
+            background-color: #09002F;
+        }
+
+        #btn3{
+            background-color: transparent;
+            border: 10px solid #26011C;
+            transition: all 1s;
+        }
+        #btn3:hover{
+            border: 10px solid #590242;
+        }
+
+        #btn4{
+            background-color: #590242;
+            font-size: 20px;
+        }
+
+        #btn4:hover::after{
+            content: ", tudo bem!";
+        }
+        span{display: none;}
+    </style>
+</head>
+<body>
+    <section>
+        <button class="btn" id="btn1"></button>
+        <button class="btn" id="btn2"></button>
+        <button class="btn" id="btn3"></button>
+        <button class="btn" id="btn4">
+            Olá
+        </button>
+    </section>
+</body>
+</html>
