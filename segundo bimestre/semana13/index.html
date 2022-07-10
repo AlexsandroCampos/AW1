@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado </title>
+    <script src="https://kit.fontawesome.com/ba0f92a010.js" crossorigin="anonymous"></script>
+    <style>
+        /*Resetando as configurações padrão*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /*Estilos para o cabeçalho*/
+        .header {
+            width: 100%;
+            height: 155px;
+            background-color: #E80000;
+            padding: 20px;
+            padding-bottom: 27px;
+            box-shadow: 1px 1px 8px 4px #00000063;
+        }
+
+        .container-top {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+        }
+
+        .container-top .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .container-top .main-search {
+            position: relative;
+            width: 550px;
+        }
+
+        .container-top .main-search input{
+            width: 100%;
+            padding: 11px 0px 11px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            box-shadow: 1px 1px 8px 4px #00000063;
+        }
+
+        .container-top .main-search button {
+            position: absolute;
+            top: 9px;
+            right: 15px;
+            background-color: transparent;
+            border: none;
+        }
+
+        .container-top .main-search i {
+           
+            font-size: 20px;
+            background-color: none;
+            border: none;
+            cursor: pointer;
+            color: #E80000;
+        }
+
+        .container-top .icons {
+            font-size: 23px;
+            color: #fff;
+        }
+
+        .container-top .icons i{
+            margin-right: 40px;
+        }
+
+        .icons i { cursor: pointer; }
+
+        .icons i:hover { 
+            font-size: 27px;
+            cursor: pointer; 
+        }
+
+        .container-bottom ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .container-bottom .dropbtn {
+            color: #fff;
+            padding: 10px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .container-bottom li {
+            position: relative;
+            display: inline-block;
+        }
+
+        .container-bottom li:hover .dropbtn{ background-color: #B50000; }
+
+        .container-bottom li:hover:hover .dropdown-content { display: block; }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .container-bottom .dropdown-content {
+            display: none;
+            margin-top: 5px;
+            position: absolute;
+            background-color: #f1f1f1;
+            border-radius: 2px;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+        }
+
+        /*Estilos para o conteúdo da página*/
+        .main {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .main .card-container {
+            width: 250px;
+            height: 350px;
+            border: 1px solid rgba(0, 0, 0, 0.11);
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 20px;
+        }
+
+        .main .card-container .card-img { height: 150px; width: 100%;}
+
+        .main .card-container .card-img#img1 {
+            background: url(https://images-americanas.b2w.io/produtos/1254216856/imagens/coca-cola-pet-2l/1254216856_1_large.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .main .card-container .card-img#img2 {
+            background: url(https://images-americanas.b2w.io/produtos/2554273730/imagens/salgadinho-de-milho-presunto-elma-chips-fandangos-pacote-140g/2554273730_1_large.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .main .card-container .card-img#img3 {
+            background: url(https://images-americanas.b2w.io/produtos/01/00/img/44413/8/44413832_1GG.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .main .card-container .card-img#img4 {
+            background: url(https://images-americanas.b2w.io/produtos/1439290681/imagens/sabao-liquido-brilhante-higiene-total-3l/1439290681_1_large.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .main .card-container .card-img#img5 {
+            background: url(https://images-americanas.b2w.io/produtos/01/00/img7/01/00/item/1642045/3/1642045366_1GG.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .main .card-container .card-img#img6 {
+            background: url(https://images-americanas.b2w.io/produtos/01/00/img/27952/6/27952628_1GG.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .main .card-container .card-img#img7 {
+            background: url(https://images-americanas.b2w.io/produtos/6889657/imagens/bala-de-gelatina-beijos-morango-90g-fini/6889657_1_large.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .main .card-container .card-img#img8 {
+            background: url(https://images-americanas.b2w.io/produtos/1529312055/imagens/bolo-abacaxi-zero-acucar-suavipan-250g/1529312055_1_large.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .main .card-container .card-title {
+            font-size: 17px;
+            font-weight: normal;
+            margin-top: 21px;
+            margin-top: 8px;
+        }
+
+        .main .card-container .card-price {
+            font-size: 20px;
+            margin-bottom: 21px;
+            margin-top: 21px;
+            font-weight: bold;
+        }
+
+        .main .card-container .card-button {
+            display: block;
+            margin: auto;
+            font-size: 16px;
+            padding: 5px 10px;
+            background-color: transparent;
+            color: #E80000;
+            border: 1px solid #E80000;
+            border-radius: 5px;
+        }
+
+        .main .card-container .card-button:hover {
+            background-color: #E80000;
+            color: #fff;
+            border: 1px solid #E80000;
+        }
+
+        .main .card-container .card-button:active {
+            background-color: #B50000;
+            color: #fff;
+            border: 1px solid #B50000;
+        }
+
+        /*Estilos para rodapé da página*/
+        .footer {
+            margin-top: 40px;
+            width: 100%;
+            padding: 30px;
+            background-color: #E80000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px -6px 7px rgba(0, 0, 0, 0.178);
+        }
+
+        .footer .container-footer {
+            width: 40%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer p {
+            font-weight: bold;
+            margin-right: 40px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .footer a {
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho da página-->
+    <header class="header">
+        <div class="container-top">
+            <a href="index.html" class="logo">Central Market</a>
+
+            <form class="main-search">
+                <input type="text" placeholder="Buscar produtos, marcas e muito mais...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
+            <div class="icons">
+                <i class="fa-solid fa-circle-user"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-heart"></i>
+            </div>
+        </div>
+
+        <div class="container-bottom">
+                <ul>
+                    <li>
+                        <a href="#" class="dropbtn">Mercado</a>
+                        <div class="dropdown-content">
+                            <a href="#">Açougue</a>
+                            <a href="#">Limpeza</a>
+                            <a href="#">Hortifruti</a>
+                            <a href="#">Bebidas</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="dropbtn">Informática</a>
+                        <div class="dropdown-content">
+                            <a href="#">Notebook</a>
+                            <a href="#">Computador</a>
+                            <a href="#">Tablet</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="dropbtn">Eletrodomésticos</a>
+                        <div class="dropdown-content">
+                            <a href="#">Geladeira</a>
+                            <a href="#">Fogão</a>
+                            <a href="#">Freezer</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="dropbtn">Celulares</a>
+                        <div class="dropdown-content">
+                            <a href="#">Smartphones</a>
+                            <a href="#">Iphones</a>
+                            <a href="#">Peças pra celular</a>
+                            <a href="#">Celulares básicos</a>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+    </header>
+
+    <!-- Conteúdo da página-->
+    <section class="main">
+        <div class="card-container">
+            <div class="card-img" id="img1"></div>
+            <div class="card-body">
+                <h5 class="card-title">Coca cola 2l</h5>
+                <p class="card-price">R$ 5,20</p>
+                <button class="card-button">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card-img" id="img2"></div>
+            <div class="card-body">
+                <h5 class="card-title">Salgadinho de milho</h5>
+                <p class="card-price">R$ 4,00</p>
+                <button class="card-button">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card-img" id="img3"></div>
+            <div class="card-body">
+                <h5 class="card-title">Chocolate kitkat white</h5>
+                <p class="card-price">R$ 5,20</p>
+                <button class="card-button">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card-img" id="img4"></div>
+            <div class="card-body">
+                <h5 class="card-title">Sabao liquido brilhante</h5>
+                <p class="card-price">R$ 35,20</p>
+                <button class="card-button">Comprar</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="main">
+        <div class="card-container">
+            <div class="card-img" id="img5"></div>
+            <div class="card-body">
+                <h5 class="card-title">Papel toalha kitchen</h5>
+                <p class="card-price">R$ 14,99</p>
+                <button class="card-button">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card-img" id="img6"></div>
+            <div class="card-body">
+                <h5 class="card-title">Creme dental colgate</h5>
+                <p class="card-price">R$ 1,59</p>
+                <button class="card-button">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card-img" id="img7"></div>
+            <div class="card-body">
+                <h5 class="card-title">Bala de gelatina beijos</h5>
+                <p class="card-price">R$ 6,99</p>
+                <button class="card-button">Comprar</button>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card-img" id="img8"></div>
+            <div class="card-body">
+                <h5 class="card-title">Bolo abacaxi</h5>
+                <p class="card-price">R$ 16,66</p>
+                <button class="card-button">Comprar</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Rodapé da página-->
+    <footer class="footer">
+        <div class="container-footer">
+            <p>©2022 Central Market</p>
+            <p><a href="#">Termos</a></p>
+            <p><a href="#">Privacidade</a></p>
+        </div>
+
+    </footer>
+</body>
+</html>
