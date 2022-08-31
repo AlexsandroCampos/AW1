@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exercício 3</title>
+</head>
+<body>
+    <p>Anos bissextos entre 1004 e 2022:</p>
+    <script>
+        for (var i = 1004; i <= 2022; i++) {
+            if(i % 400 == 0) {
+                document.write(i + '<br>');
+            }
+            else if((i % 4 == 0) && (i % 100 != 0)) {
+                document.write(i + '<br>');
+            }
+        }
+    </script>
+</body>
+</html>

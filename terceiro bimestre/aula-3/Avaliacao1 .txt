@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1 da prova</title>
+    <style>
+        body {
+            background-color: rgb(163, 163, 163);
+        }
+        .content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px 15px;
+            width: 400px;
+            border-radius: 7px;
+            background-color: #ccc;
+            margin: 20px auto;
+            box-shadow: 4px 3px 11px 2px rgba(0, 0, 0, 0.541);
+        }
+        .content form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content form label{ 
+            margin-top: 10px;
+        }
+
+        .content form input{ 
+            border-radius: 7px;
+            padding: 5px;
+        }
+
+        .btns{
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+        }
+
+        .btns input{
+            width: 50%;
+        }
+
+        p{ 
+            margin-bottom: 8px;
+        }
+
+        .result {
+            display: none;
+            padding: 5px;
+            border-radius: 7px;
+            background-color: #fff;
+            margin-bottom: 8px;
+            border: 1px solid rgb(138, 138, 138);
+        }
+
+        .btn {
+            background-color: #b9b8b8;
+        }
+
+        .btn:hover {
+            background-color: rgba(0, 0, 0, 0.322);
+        }
+
+      
+    </style>
+</head>
+<body>
+    <main class="content">
+        <form onsubmit="submitForm(event)">
+            <label for="username">Nome</label><input type="text" name="username" id="username">
+            <label for="number1">Nota 1</label><input type="number" name="number" id="number1">
+            <label for="number2">Nota 2</label><input type="number" name="number" id="number2">
+            <label for="number3">Nota 3</label><input type="number" name="number" id="number3">
+            <div class="btns">
+                <input type="submit" value="Enviar" class="btn">
+                <input type="reset" value="Limpar" class="btn">
+            </div>
+            
+        </form>
+
+        <div class="result-container">
+            <p>Reposta</p>
+            <div class="result"></div>
+        </div>
+    </main>
+    <script>
+        let name;
+        let avarege = 0;
+
+        function submitForm(event) {
+            event.preventDefault();
+            let inputs = document.getElementsByName("number");
+            name = document.querySelector("#username").value;
+            let sum = 0;
+        
+            for (let i = 0; i < inputs.length; i++) { 
+                sum = parseFloat(inputs[i].value) + sum;
+            }
+
+            avarege = sum/3;
+            printAvarege(Number((avarege).toFixed(2)));
+
+
+        }
+
+        function printAvarege(avarege) {
+            let divResult = document.querySelector(".result");
+            divResult.style.display = "block";
+            (avarege < 6) ? divResult.innerHTML = name + ", " + avarege + ", Reprovado" : divResult.innerHTML = name + ", " + avarege + ", Aprovado";
+        }
+    </script>
+</body>
+</html>
