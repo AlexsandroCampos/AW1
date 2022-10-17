@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+    <style>
+        .jogo {
+            background-color: white;
+            display: flex;
+            flex-wrap: wrap;
+            width: 210px;
+            margin: 30px auto;
+        }
+        div{
+            width: 60px;
+            height: 80px; 
+            border: 3px solid black;
+            color: black; 
+            font-size: 70px; 
+            text-align: center;
+        }
+        #bloco0 {border-left: none; border-right: none; border-top: none;}
+        #bloco3 {border-left: none; border-right: none; border-top: none;}
+        #bloco6 {border: none;}
+        #bloco2 {border-left: none; border-right: none; border-top: none;}
+        #bloco5 {border-left: none; border-right: none; border-top: none;}
+        #bloco8 {border: none;}
+        #bloco1 {border-top: none;}
+        #bloco4 {border-top: none;}
+        #bloco7 {border-top: none; border-bottom: none;}
+        #resultado {
+            display: none;
+            width: 186px;
+            height: auto; 
+            font-size: 30px; 
+            text-align: center; 
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="jogo">
+        <section id="resultado">Ganhou!!!</section>
+    </section>
+    
+    <script>
+        const jogo = document.querySelector('.jogo');
+        const blocoResultado = document.getElementById("resultado");
+        const inputListener = (event) => selecionar(event);
+        let matriz = [];
+        let opcao = true;
+        let ganhou = false;
+        let contador = 0;
+        for(let i = 0; i<3; i++) {
+            matriz[i] = [];
+            for(let j = 0; j<3; j++) {
+                const bloco = document.createElement('div');
+                bloco.setAttribute("id", "bloco"+ contador++);
+                matriz[i].push(bloco);
+                jogo.appendChild(bloco);
+                bloco.addEventListener("click",inputListener);
+                
+            }
+        }
+
+        function selecionar(event) {
+            if(event != null) {
+                if(event.target.innerText == ""){
+                    (opcao) ? event.target.innerText = "o" :  event.target.innerText = "x";
+                    opcao ? opcao = false : opcao = true;
+                    ganhouLinha();
+                    ganhouColuna();
+                    ganhouDiagonal();
+                    if(!ganhou)
+                        velha();
+                }
+            }
+        }
+        
+        function ganhouLinha() {
+            for (let i = 0; i < matriz.length; i++) {
+                if((matriz[i][0].innerText != "") && (matriz[i][1].innerText != "") && (matriz[i][2].innerText != "")) {
+                    
+                    if(matriz[i][0].innerText == matriz[i][1].innerText && matriz[i][0].innerText == matriz[i][2].innerText) {
+                        blocoResultado.style.display = "block";
+                        removerEvento();
+                        ganhou = true;
+                    }
+                }
+                
+            }
+                
+        }
+
+        function ganhouColuna() {
+            for (let i = 0; i < matriz.length; i++) {
+                if((matriz[0][i].innerText != "") && (matriz[1][i].innerText != "") && (matriz[2][i].innerText != "")) {
+                    
+                    if((matriz[0][i].innerText == matriz[1][i].innerText) && (matriz[2][i].innerText == matriz[0][i].innerText)) {
+                        blocoResultado.style.display = "block";
+                        removerEvento();
+                        ganhou = true;
+                    }
+                }
+                
+            }
+                
+        }if((matriz[0][0].innerText != "") && (matriz[1][1].innerText != "") && (matriz[2][2].innerText != "")) {
+                
+                if((matriz[0][0].innerText == matriz[1][1].innerText) && (atriz[0][0].innerText == matriz[2][2].innerText)) {
+                    blocoResultado.style.display = "block";
+                    removerEvento();
+                    ganhou = true;
+                }
+            }
+
+        function ganhouDiagonal() {
+            if((matriz[0][0].innerText != "") && (matriz[1][1].innerText != "") && (matriz[2][2].innerText != "")) {
+                
+                if((matriz[0][0].innerText == matriz[1][1].innerText) && (matriz[0][0].innerText == matriz[2][2].innerText)) {
+                    blocoResultado.style.display = "block";
+                    removerEvento();
+                    ganhou = true;
+                }
+            }
+
+            if((matriz[0][2].innerText != "") && (matriz[1][1].innerText != "") && (matriz[2][0].innerText != "")) {
+                
+                if((matriz[0][2].innerText == matriz[1][1].innerText) && (matriz[2][0].innerText == matriz[0][2].innerText)) {
+                    blocoResultado.style.display = "block";
+                    removerEvento();
+                    ganhou = true;
+                }
+            }
+                
+        }
+
+        function velha() {
+            let aux = 0;
+            for (let i = 0; i < matriz.length; i++) {
+                for (let j = 0; j < matriz[i].length; j++) {
+                    if(matriz[i][j].innerText != "") {
+                        aux++;
+                    }
+                }
+            }
+
+            if(aux == 9) {
+                blocoResultado.style.display = "block";
+                blocoResultado.innerText = "Deu velha"
+            }
+        }
+
+        function removerEvento() {
+            for (let i = 0; i < matriz.length; i++) {
+                for (let j = 0; j < matriz[i].length; j++) {
+                    matriz[i][j].removeEventListener("click",  inputListener);
+                }
+            }
+        }
+    
+
+        
+    </script>
+</body>
+</html>
