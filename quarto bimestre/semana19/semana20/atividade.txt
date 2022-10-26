@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Formulário</title>
+</head>
+<body>
+    
+    <h1>Atividade de formulário</h1>
+    <form method="post" id="formulario">
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+        </div>
+
+        <div>
+            <label for="nomeusuario">Nome de usuário</label>
+            <input type="text" name="nomeusuario" id="nomeusuario">
+        </div>
+
+        <div>
+            <label for="senha1">Senha 1</label>
+            <input type="text" name="senha1" id="senha1">
+        </div>
+
+        <div>
+            <label for="senha2">Senha 2</label>
+            <input type="text" name="senha2" id="senha2">
+        </div>
+
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script src="atividade.js"></script>
+</body>
+</html>

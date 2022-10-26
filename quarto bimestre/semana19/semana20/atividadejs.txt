@@ -1,0 +1,22 @@
+const formulario = document.getElementById("formulario");
+const resultado = document.getElementById("resultado");
+
+formulario.addEventListener("submit", (event) => {
+    event.preventDefault();
+    validar(event.currentTarget);
+});
+
+function validar(form) {
+    let nome = form[0].value;
+    let nomeUsuario = form[1].value;
+    let senha1 = form[2].value;
+    let senha2 = form[3].value;
+
+    if(nome == "" || nomeUsuario == "" || senha1 == "" || senha2 == "") {
+        resultado.innerHTML = "Todos os campos precisam estar preenchidos!!!!!!!!!!!";
+    } else if(senha1 != senha2) {
+        resultado.innerHTML = nome + ", repita o processo novamente, pois a senha 1 não é igual a senha 2.";
+    } else {
+        resultado.innerHTML = nome +  ", sua senha foi cadastrada com sucesso.";
+    }
+}
